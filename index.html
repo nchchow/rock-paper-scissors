@@ -51,9 +51,33 @@
         return results;
     }
 
-    const playerSelection = 'rock';
-    const computerSelection = computerPlay();
-    console.log(playRound(playerSelection, computerSelection));
+    function game() {
+        var playerScore = 0;
+        var computerScore = 0;
+        for(i = 0; i < 5; i++) {
+            const playerSelection = window.prompt("Type in your selection");
+            const computerSelection = computerPlay();
+            let results = playRound(playerSelection, computerSelection);
+            if(results === "You win! ") {
+                ++playerScore;
+            }
+            if(results === "You lose! ") {
+                ++computerScore;
+            }
+            console.log(results + "this round")
+        }
+
+        if(playerScore === computerScore) {
+            console.log("It's a tie for this game!")
+        } else {
+            let finalResults = "You ";
+            playerScore > computerScore ? finalResults += "win " : finalResults += "lose ";
+            finalResults += "this game!";
+            console.log(finalResults);
+        }
+    }
+
+    game();
 
 </script>
 </html>
