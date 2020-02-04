@@ -9,8 +9,51 @@
         let i = parseInt(rand);
         return selections[i];
     }
+    
+    function playRound(playerSelection, computerSelection) {
+        var results = '';
+        console.log(playerSelection);
+        switch(playerSelection) {
+            case 'rock':
+                if(computerSelection === "Rock") {
+                    results = "It's a tie! ";
+                }
+                if(computerSelection === "Paper") {
+                    results = "You lose! ";
+                }
+                if(computerSelection === "Scissors") {
+                    results = "You win! ";
+                }
+                break;
+            case 'paper':
+                if (computerSelection === "Rock") {
+                    results = "You win! ";
+                }
+                if (computerSelection === "Paper") {
+                    results = "It's a tie! ";
+                }
+                if (computerSelection === "Scissors") {
+                    results = "You lose! ";
+                }
+                break;
+            case 'scissors':
+                if (computerSelection === "Rock") {
+                    results = "You lose! ";
+                }
+                if (computerSelection === "Paper") {
+                    results = "You win! ";
+                }
+                if (computerSelection === "Scissors") {
+                    results = "It's a tie! ";   
+                }
+                break;
+        }
+        return results + ;
+    }
 
-    console.log(computerPlay());
+    const playerSelection = 'rock';
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
 
 </script>
 </html>
