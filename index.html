@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+    function computerPlay() {
+        // randomly return rock, paper or scissors
+        let selections = ["Rock", "Paper", "Scissors"];
+        let rand = Math.random() * 3;
+        let i = parseInt(rand);
+        return selections[i];
+    }
+
+    console.log(computerPlay());
+
+</script>
+</html>
