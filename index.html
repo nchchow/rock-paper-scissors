@@ -12,7 +12,7 @@
     
     function playRound(playerSelection, computerSelection) {
         var results = '';
-        console.log(playerSelection);
+        playerSelection = playerSelection.toLowerCase();
         switch(playerSelection) {
             case 'rock':
                 if(computerSelection === "Rock") {
@@ -48,7 +48,7 @@
                 }
                 break;
         }
-        return results + ;
+        return results;
     }
 
     const playerSelection = 'rock';
