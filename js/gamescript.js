@@ -1,3 +1,7 @@
+// global references
+var playerScore = 0;
+var computerScore = 0;
+
 // html references
 const resultsTag = document.querySelector('#results');
 
@@ -16,11 +20,6 @@ function computerPlay() {
     let i = parseInt(rand);
     return selections[i];
 }
-
-
-var playerScore = 0;
-var computerScore = 0;
-
 
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
