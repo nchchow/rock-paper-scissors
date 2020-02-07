@@ -4,6 +4,8 @@ var computerScore = 0;
 
 // html references
 const resultsTag = document.querySelector('#results');
+const playerScoreTag = document.querySelector('#playerscore');
+const computerScoreTag = document.querySelector('#computerscore');
 
 // buttons
 const buttons = document.querySelectorAll('button');
@@ -64,8 +66,8 @@ function playRound(playerSelection, computerSelection) {
             }
             break;
     }
-    
-    resultsTag.textContent = results + "Player: " + playerScore + " Computer: " + computerScore;
+    updatePoints();
+    resultsTag.textContent = results + "This round!";
     if(playerScore === 5 || computerScore === 5) {
         displayFinalResults();
         playerScore = 0;
@@ -81,3 +83,7 @@ function displayFinalResults() {
     resultsTag.textContent = finalResults;
 }
 
+function updatePoints() {
+    playerScoreTag.textContent = "You: " + playerScore;
+    computerScoreTag.textContent = "Computer: " + computerScore;
+}
