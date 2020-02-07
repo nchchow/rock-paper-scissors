@@ -1,6 +1,6 @@
 // game();
 
-// containers
+// html references
 const resultsTag = document.querySelector('#results');
 
 // buttons
@@ -70,8 +70,8 @@ function playRound(playerSelection, computerSelection) {
             }
             break;
     }
-    console.log(results);
-    resultsTag.textContent = results;
+    
+    resultsTag.textContent = results + "Player: " + playerScore + " Computer: " + computerScore;
     if(playerScore === 5 || computerScore === 5) {
         displayFinalResults();
         playerScore = 0;
@@ -84,28 +84,6 @@ function displayFinalResults() {
     let finalResults = "You ";
     playerScore > computerScore ? finalResults += "win " : finalResults += "lose ";
     finalResults += "this game!";
-    console.log(finalResults);
-}
-
-function game() {
-
-    // let results = playRound(playerSelection, computerSelection);
-    // if (results === "You win! ") {
-    //     ++playerScore;
-    // }
-    // if (results === "You lose! ") {
-    //     ++computerScore;
-    // }
-    // console.log(results + "this round")
-
-
-    // if (playerScore === computerScore) {
-    //     console.log("It's a tie for this game!")
-    // } else {
-    //     let finalResults = "You ";
-    //     playerScore > computerScore ? finalResults += "win " : finalResults += "lose ";
-    //     finalResults += "this game!";
-    //     console.log(finalResults);
-    // }
+    resultsTag.textContent = finalResults;
 }
 
