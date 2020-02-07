@@ -9,19 +9,19 @@
         let i = parseInt(rand);
         return selections[i];
     }
-    
+
     function playRound(playerSelection, computerSelection) {
         var results = '';
         playerSelection = playerSelection.toLowerCase();
-        switch(playerSelection) {
+        switch (playerSelection) {
             case 'rock':
-                if(computerSelection === "Rock") {
+                if (computerSelection === "Rock") {
                     results = "It's a tie! ";
                 }
-                if(computerSelection === "Paper") {
+                if (computerSelection === "Paper") {
                     results = "You lose! ";
                 }
-                if(computerSelection === "Scissors") {
+                if (computerSelection === "Scissors") {
                     results = "You win! ";
                 }
                 break;
@@ -44,7 +44,7 @@
                     results = "You win! ";
                 }
                 if (computerSelection === "Scissors") {
-                    results = "It's a tie! ";   
+                    results = "It's a tie! ";
                 }
                 break;
         }
@@ -54,20 +54,20 @@
     function game() {
         var playerScore = 0;
         var computerScore = 0;
-        for(i = 0; i < 5; i++) {
-            const playerSelection = window.prompt("Type in your selection");
-            const computerSelection = computerPlay();
-            let results = playRound(playerSelection, computerSelection);
-            if(results === "You win! ") {
-                ++playerScore;
-            }
-            if(results === "You lose! ") {
-                ++computerScore;
-            }
-            console.log(results + "this round")
-        }
 
-        if(playerScore === computerScore) {
+        const playerSelection = window.prompt("Type in your selection");
+        const computerSelection = computerPlay();
+        let results = playRound(playerSelection, computerSelection);
+        if (results === "You win! ") {
+            ++playerScore;
+        }
+        if (results === "You lose! ") {
+            ++computerScore;
+        }
+        console.log(results + "this round")
+
+
+        if (playerScore === computerScore) {
             console.log("It's a tie for this game!")
         } else {
             let finalResults = "You ";
@@ -80,4 +80,5 @@
     game();
 
 </script>
+
 </html>
