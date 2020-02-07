@@ -1,5 +1,3 @@
-// game();
-
 // html references
 const resultsTag = document.querySelector('#results');
 
@@ -25,9 +23,6 @@ var computerScore = 0;
 
 
 function playRound(playerSelection, computerSelection) {
-
-    console.log(playerSelection);
-    console.log(computerSelection);
     playerSelection = playerSelection.toLowerCase();
     switch (playerSelection) {
         case 'rock':
