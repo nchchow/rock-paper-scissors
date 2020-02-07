@@ -1,7 +1,7 @@
-game();
+// game();
 
-var playerScore = 0;
-var computerScore = 0;
+// containers
+const resultsTag = document.querySelector('#results');
 
 // buttons
 const buttons = document.querySelectorAll('button');
@@ -18,6 +18,11 @@ function computerPlay() {
     let i = parseInt(rand);
     return selections[i];
 }
+
+
+var playerScore = 0;
+var computerScore = 0;
+
 
 function playRound(playerSelection, computerSelection) {
 
@@ -66,7 +71,20 @@ function playRound(playerSelection, computerSelection) {
             break;
     }
     console.log(results);
+    resultsTag.textContent = results;
+    if(playerScore === 5 || computerScore === 5) {
+        displayFinalResults();
+        playerScore = 0;
+        computerScore = 0;
+    }
     return results;
+}
+
+function displayFinalResults() {
+    let finalResults = "You ";
+    playerScore > computerScore ? finalResults += "win " : finalResults += "lose ";
+    finalResults += "this game!";
+    console.log(finalResults);
 }
 
 function game() {
